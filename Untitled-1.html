@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Demetra - Calzature sostenibili</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="cart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="Untitled-1.html" class="logo">
+      <img src="img-site/herodemetra.png" alt="Logo Demetra">
+      <span>Demetra</span>
+    </a>
+
+    <nav class="nav">
+      <a href="Untitled-1.html">Home</a>
+      <a href="collezione-urban.html">Collezione Urban</a>
+      <a href="perche-sostenibile.html">Perché sostenibile</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="cart-icon-wrapper">
+      <a href="carrello.html" class="cart-icon">🛒</a>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <main class="main">
+      <section class="hero-text hero-center">
+        <p class="eyebrow">Società Benefit • Certificata B-Corp</p>
+
+        <h1>Sneakers sostenibili per chi vive la città ogni giorno.</h1>
+
+        <a href="#" class="btn-primary">Scopri la collezione Urban</a>
+      </section>
+    </main>
+  </div> <!-- .hero -->
+
+  <!-- Sezione informativa sotto l'hero (sfondo verde scuro con 3 box chiaro) -->
+  <section class="info dark">
+    <div class="container">
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Chi siamo</h3>
+          <p>Una realtà che unisce design, innovazione e economia circolare per creare calzature responsabili.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Vision</h3>
+          <p>Essere punto di riferimento per la moda sostenibile, riducendo sprechi e valorizzando materie prime.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Mission</h3>
+          <p>Produrre scarpe di qualità usando materiali organici e processi a basso impatto ambientale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione collezione e carosello -->
+  <section class="collection">
+    <div class="container">
+      <h2>Nuova collezione Urban</h2>
+
+      <div class="carousel" aria-label="Carosello scarpe">
+        <button class="carousel-button carousel-prev" aria-label="Precedente">‹</button>
+        <div class="carousel-track">
+          <figure class="carousel-item">
+            <a href="product1.html" class="product-link">
+              <div class="img-wrap">
+                <img src="img-site/sneakers1.png" alt="Sneakers 1">
+                <span class="discover">Scopri di più</span>
+              </div>
+              <div class="product-info">
+                <figcaption class="model-label">Urban One</figcaption>
+                <span class="price">€39.99</span>
+              </div>
+            </a>
+          </figure>
+
+          <figure class="carousel-item">
+            <a href="product2.html" class="product-link">
+              <div class="img-wrap">
+                <img src="img-site/sneaker2.jpg" alt="Sneakers 2">
+                <span class="discover">Scopri di più</span>
+              </div>
+              <div class="product-info">
+                <figcaption class="model-label">Urban Two</figcaption>
+                <span class="price">€39.99</span>
+              </div>
+            </a>
+          </figure>
+
+          <figure class="carousel-item">
+            <a href="product3.html" class="product-link">
+              <div class="img-wrap">
+                <img src="img-site/sneakers3.jpg" alt="Sneakers 3">
+                <span class="discover">Scopri di più</span>
+              </div>
+              <div class="product-info">
+                <figcaption class="model-label">Urban Three</figcaption>
+                <span class="price">€39.99</span>
+              </div>
+            </a>
+          </figure>
+
+          <figure class="carousel-item">
+            <a href="product4.html" class="product-link">
+              <div class="img-wrap">
+                <img src="img-site/sneakers4.jpg" alt="Sneakers 4">
+                <span class="discover">Scopri di più</span>
+              </div>
+              <div class="product-info">
+                <figcaption class="model-label">Urban Four</figcaption>
+                <span class="price">€39.99</span>
+              </div>
+            </a>
+          </figure>
+        </div>
+        <button class="carousel-button carousel-next" aria-label="Successivo">›</button>
+        <div class="carousel-dots" role="tablist" aria-label="Seleziona slide"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Demetra</h4>
+        <p>Calzature sostenibili • Made in Italy</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Link</h4>
+        <ul>
+          <li><a href="collezione-urban.html">Collezione Urban</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Cookie</a></li>
+          <li><a href="#">Privacy & Policy</a></li>
+          <li><a href="#">Termini</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© 2025 Demetra. Tutti i diritti riservati.</small>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const carousel = document.querySelector('.carousel');
+      if (!carousel) return;
+      const track = carousel.querySelector('.carousel-track');
+      const items = Array.from(track.children);
+      const prevBtn = carousel.querySelector('.carousel-prev');
+      const nextBtn = carousel.querySelector('.carousel-next');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      let index = 0;
+      let intervalId = null;
+
+      function createDots(){
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        items.forEach((_, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'carousel-dot';
+          btn.setAttribute('aria-label', 'Vai alla slide ' + (i+1));
+          btn.addEventListener('click', () => {
+            index = i;
+            update();
+            resetAutoplay();
+          });
+          dotsContainer.appendChild(btn);
+        });
+      }
+
+      function updateDots(){
+        if (!dotsContainer) return;
+        Array.from(dotsContainer.children).forEach((d,i) => {
+          d.classList.toggle('active', i === index);
+          d.setAttribute('aria-current', i === index ? 'true' : 'false');
+        });
+      }
+
+      function update(){
+        if (!items.length) return;
+        const gap = parseInt(getComputedStyle(track).gap) || 20;
+        const itemWidth = items[0].getBoundingClientRect().width + gap;
+        track.style.transform = `translateX(${-index * itemWidth}px)`;
+        updateDots();
+      }
+
+      function next(){ index = (index + 1) % items.length; update(); }
+      function prev(){ index = (index - 1 + items.length) % items.length; update(); }
+
+      function start(){ stop(); intervalId = setInterval(next, 3000); }
+      function stop(){ if (intervalId){ clearInterval(intervalId); intervalId = null; } }
+      function resetAutoplay(){ start(); }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
+
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      window.addEventListener('resize', update);
+
+      // initialize
+      createDots();
+      update();
+      start();
+    })();
+  </script>
+</body>
+</html>

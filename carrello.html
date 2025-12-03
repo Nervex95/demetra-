@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrello - Demetra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages-styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="cart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="Untitled-1.html" class="logo">
+      <img src="img-site/herodemetra.png" alt="Logo Demetra">
+      <span>Demetra</span>
+    </a>
+
+    <nav class="nav">
+      <a href="Untitled-1.html">Home</a>
+      <a href="collezione-urban.html">Collezione Urban</a>
+      <a href="perche-sostenibile.html">Perché sostenibile</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="cart-icon-wrapper">
+      <a href="carrello.html" class="cart-icon">🛒</a>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- Hero del carrello -->
+  <div class="hero hero-product">
+    <main class="main">
+      <section class="hero-text hero-center">
+        <h1>Il tuo carrello</h1>
+        <p class="eyebrow">Scelte sostenibili • Made in Italy</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Sezione carrello -->
+  <section class="cart-section">
+    <div class="container cart-container">
+      <div class="cart-items-wrapper">
+        <h2>Articoli nel carrello</h2>
+        <div class="cart-items" id="cartItems">
+          <!-- Items populated by JS -->
+        </div>
+
+        <div class="cart-empty" id="cartEmpty" style="display: none;">
+          <p>Il tuo carrello è vuoto 🛒</p>
+          <p class="empty-text">Scopri la nostra collezione di sneaker sostenibili e aggiungi i tuoi modelli preferiti.</p>
+          <a href="collezione-urban.html" class="btn-primary">Torna alla collezione</a>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <h3>Riepilogo ordine</h3>
+        <div class="summary-details">
+          <div class="summary-row">
+            <span>Subtotale:</span>
+            <span id="subtotal">€0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Spedizione:</span>
+            <span id="shipping">Gratis</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Totale:</span>
+            <span id="total">€0.00</span>
+          </div>
+        </div>
+
+        <button class="btn-primary btn-checkout" id="checkoutBtn">Procedi all'acquisto</button>
+        <a href="collezione-urban.html" class="btn-secondary">Continua lo shopping</a>
+
+        <div class="sustainability-message">
+          <p>
+            <strong>🌱 Ogni acquisto conta!</strong><br>
+            Con le tue scelte sostenibili, stai contribuendo a ridurre l'impatto ambientale. 
+            Ogni paio di sneaker Demetra rappresenta un passo verso un futuro più verde.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Demetra</h4>
+        <p>Calzature sostenibili • Made in Italy</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Link</h4>
+        <ul>
+          <li><a href="collezione-urban.html">Collezione Urban</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Cookie</a></li>
+          <li><a href="#">Privacy & Policy</a></li>
+          <li><a href="#">Termini</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© 2025 Demetra. Tutti i diritti riservati.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Product database
+    const products = {
+      'product1': { name: 'Urban One', price: 39.99, image: 'img-site/sneakers1.png' },
+      'product2': { name: 'Urban Two', price: 39.99, image: 'img-site/sneaker2.jpg' },
+      'product3': { name: 'Urban Three', price: 39.99, image: 'img-site/sneakers3.jpg' },
+      'product4': { name: 'Urban Four', price: 39.99, image: 'img-site/sneakers4.jpg' }
+    };
+
+    function renderCart() {
+      const cart = cartManager.getCart();
+      const cartItemsContainer = document.getElementById('cartItems');
+      const cartEmpty = document.getElementById('cartEmpty');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      const cartItems = document.querySelectorAll('.cart-item');
+
+      // Clear container
+      cartItemsContainer.innerHTML = '';
+
+      let hasItems = false;
+      let total = 0;
+
+      for (const [productId, quantity] of Object.entries(cart)) {
+        if (products[productId] && quantity > 0) {
+          hasItems = true;
+          const product = products[productId];
+          const itemTotal = product.price * quantity;
+          total += itemTotal;
+
+          const itemHTML = `
+            <div class="cart-item" data-product-id="${productId}">
+              <div class="item-image">
+                <img src="${product.image}" alt="${product.name}">
+              </div>
+              <div class="item-details">
+                <h4>${product.name}</h4>
+                <p class="item-price">€${product.price.toFixed(2)}</p>
+              </div>
+              <div class="item-quantity">
+                <button class="qty-btn" onclick="window.cartManager.removeItem('${productId}'); renderCart();">−</button>
+                <span>${quantity}</span>
+                <button class="qty-btn" onclick="window.cartManager.addItem('${productId}', '${product.name}'); renderCart();">+</button>
+              </div>
+              <div class="item-total">
+                €${itemTotal.toFixed(2)}
+              </div>
+              <button class="item-remove" onclick="removeFromCart('${productId}'); renderCart();">✕</button>
+            </div>
+          `;
+          cartItemsContainer.insertAdjacentHTML('beforeend', itemHTML);
+        }
+      }
+
+      // Update summary
+      document.getElementById('subtotal').textContent = '€' + total.toFixed(2);
+      document.getElementById('total').textContent = '€' + total.toFixed(2);
+
+      // Show/hide empty state
+      if (hasItems) {
+        cartItemsContainer.style.display = 'grid';
+        cartEmpty.style.display = 'none';
+        checkoutBtn.style.display = 'block';
+      } else {
+        cartItemsContainer.style.display = 'none';
+        cartEmpty.style.display = 'block';
+        checkoutBtn.style.display = 'none';
+      }
+    }
+
+    function removeFromCart(productId) {
+      const cart = cartManager.getCart();
+      delete cart[productId];
+      localStorage.setItem('demetra_cart', JSON.stringify(cart));
+      // Trigger cart count update across all windows
+      window.dispatchEvent(new Event('cartUpdated'));
+      renderCart();
+    }
+
+    // Checkout
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      alert('Grazie per il tuo acquisto sostenibile! 🌱\n\nIl processo di checkout è in sviluppo.');
+    });
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', renderCart);
+    window.addEventListener('cartUpdated', renderCart);
+  </script>
+</body>
+</html>

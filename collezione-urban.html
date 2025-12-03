@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Collezione Urban - Demetra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages-styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="cart.js"></script>
+</head>
+<body class="collection-page">
+  <header class="header">
+    <a href="Untitled-1.html" class="logo">
+      <img src="img-site/herodemetra.png" alt="Logo Demetra">
+      <span>Demetra</span>
+    </a>
+
+    <nav class="nav">
+      <a href="Untitled-1.html">Home</a>
+      <a href="collezione-urban.html">Collezione Urban</a>
+      <a href="perche-sostenibile.html">Perché sostenibile</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="cart-icon-wrapper">
+      <a href="carrello.html" class="cart-icon">🛒</a>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- Hero della collezione -->
+  <div class="hero">
+    <main class="main">
+      <section class="hero-text hero-center">
+        <p class="eyebrow">Nuova collezione</p>
+        <h1>Collezione Urban</h1>
+        <div class="hero-highlight-box">
+          <p class="hero-highlight-text">Sneakers sostenibili disegnate per la città moderna</p>
+        </div>
+        <a href="collezione-urban.html#collection-section" class="btn-primary">Scopri i nostri modelli</a>
+        <a href="#collection-section" class="scroll-indicator" onclick="document.querySelector('#collection-section').scrollIntoView({behavior: 'smooth'}); return false;">
+          <span class="arrow-icon">↓</span>
+        </a>
+      </section>
+    </main>
+  </div>
+
+  <!-- Sezione collezione completa -->
+  <section class="collection" id="collection-section">
+    <div class="container">
+      <h2>I nostri modelli</h2>
+
+      <div class="collection-grid">
+        <div class="collection-card">
+          <a href="product1.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers1.png" alt="Urban One">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban One</h3>
+              <span class="price">€39.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product2.html">
+            <div class="img-wrap">
+              <img src="img-site/sneaker2.jpg" alt="Urban Two">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Two</h3>
+              <span class="price">€39.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product3.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers3.jpg" alt="Urban Three">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Three</h3>
+              <span class="price">€39.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product4.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers4.jpg" alt="Urban Four">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Four</h3>
+              <span class="price">€39.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product1.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers1.png" alt="Urban Five">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Five</h3>
+              <span class="price">€49.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product2.html">
+            <div class="img-wrap">
+              <img src="img-site/sneaker2.jpg" alt="Urban Six">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Six</h3>
+              <span class="price">€49.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product3.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers3.jpg" alt="Urban Seven">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Seven</h3>
+              <span class="price">€44.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product4.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers4.jpg" alt="Urban Eight">
+              <span class="discover">Scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Eight</h3>
+              <span class="price">€54.99</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="collection-card">
+          <a href="product1.html">
+            <div class="img-wrap">
+              <img src="img-site/sneakers1.png" alt="Urban Nine">
+              <span class="scopri di più</span>
+            </div>
+            <div class="product-info">
+              <h3 class="model-label">Urban Nine</h3>
+              <span class="price">€44.99</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Demetra</h4>
+        <p>Calzature sostenibili • Made in Italy</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Link</h4>
+        <ul>
+          <li><a href="collezione-urban.html">Collezione Urban</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Cookie</a></li>
+          <li><a href="#">Privacy & Policy</a></li>
+          <li><a href="#">Termini</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© 2025 Demetra. Tutti i diritti riservati.</small>
+    </div>
+  </footer>
+</body>
+</html>

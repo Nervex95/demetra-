@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Urban Three - Demetra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages-styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="cart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="Untitled-1.html" class="logo">
+      <img src="img-site/herodemetra.png" alt="Logo Demetra">
+      <span>Demetra</span>
+    </a>
+
+    <nav class="nav">
+      <a href="Untitled-1.html">Home</a>
+      <a href="collezione-urban.html">Collezione Urban</a>
+      <a href="perche-sostenibile.html">Perché sostenibile</a>
+      <a href="chi-siamo.html">Chi siamo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="cart-icon-wrapper">
+      <a href="carrello.html" class="cart-icon">🛒</a>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- Hero del prodotto -->
+  <div class="hero hero-product">
+    <main class="main">
+      <section class="hero-text hero-center">
+        <h1>Urban Three</h1>
+        <p class="eyebrow">Sneaker sostenibile • Edizione limitata</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Sezione dettagli prodotto -->
+  <section class="product-detail">
+    <div class="container product-container">
+      <div class="product-image">
+        <img src="img-site/sneakers3.jpg" alt="Urban Three">
+      </div>
+
+      <div class="product-content">
+        <h2>Urban Three</h2>
+        <p class="subtitle">Sneaker realizzata con materiali 100% sostenibili, perfetta per la vita urbana di ogni giorno.</p>
+
+        <div class="product-specs">
+          <h3>Caratteristiche</h3>
+          <ul>
+            <li>Suola in gomma riciclata</li>
+            <li>Tomaia in cotone biologico</li>
+            <li>Lacci in fibre naturali</li>
+            <li>Fodera in lino certificato</li>
+            <li>Design contemporaneo e versatile</li>
+          </ul>
+        </div>
+
+        <div class="product-footer">
+          <span class="product-price">€39.99</span>
+          <button class="btn-primary" onclick="cartManager.addItem('product3', 'Urban Three')">Aggiungi al carrello</button>
+        </div>
+
+        <p class="product-description">
+          Urban Three è il risultato di anni di ricerca e sviluppo nel campo della moda sostenibile. 
+          Ogni dettaglio è stato pensato per ridurre l'impatto ambientale senza compromettere stile e comfort.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Demetra</h4>
+        <p>Calzature sostenibili • Made in Italy</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Link</h4>
+        <ul>
+          <li><a href="collezione-urban.html">Collezione Urban</a></li>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Cookie</a></li>
+          <li><a href="#">Privacy & Policy</a></li>
+          <li><a href="#">Termini</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© 2025 Demetra. Tutti i diritti riservati.</small>
+    </div>
+  </footer>
+</body>
+</html>
